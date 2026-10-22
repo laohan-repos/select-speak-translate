@@ -1,0 +1,10 @@
+{
+  "source": "https://github.com/skywind3000/ECDICT",
+  "sourceFile": "ecdict.csv",
+  "gitBlobSha1": "c4ade63ea08cf39d9c3475e96929036d64d94c94",
+  "license": "MIT",
+  "selection": "English words with exam tags, Oxford flag, or BNC/FRQ frequency rank <= 30000, plus inflections",
+  "headwords": 36884,
+  "inflections": 28470,
+  "total": 65354
+}

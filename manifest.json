@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "SelectSpeak · 划词朗读翻译",
+  "short_name": "SelectSpeak",
+  "description": "选中英文，立即查看中文翻译并自动朗读。支持语速、发音选择和一键重播。",
+  "version": "0.1.0",
+  "minimum_chrome_version": "109",
+  "permissions": ["storage", "tts"],
+  "host_permissions": ["https://api.mymemory.translated.net/*"],
+  "background": { "service_worker": "src/background.js", "type": "module" },
+  "action": {
+    "default_title": "SelectSpeak · 划词朗读翻译",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/16.png", "32": "icons/32.png" }
+  },
+  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["src/content.js"],
+    "all_frames": true,
+    "match_about_blank": true,
+    "run_at": "document_idle"
+  }]
+}

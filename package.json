@@ -1,0 +1,13 @@
+{
+  "name": "select-speak-translate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Chrome 和 Edge 划词朗读翻译扩展",
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check.mjs",
+    "package": "node scripts/package.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

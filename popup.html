@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SelectSpeak 设置</title>
+  <link rel="icon" href="icons/32.png">
+  <link rel="stylesheet" href="src/popup.css">
+  <script type="module" src="src/popup.js"></script>
+</head>
+<body>
+  <main class="popup">
+    <header class="header">
+      <div class="brand"><span class="logo">A<span>↗</span></span><div><strong>SelectSpeak</strong><span class="eyebrow">划词 · 朗读 · 翻译</span></div></div>
+      <span class="version">v0.1</span>
+    </header>
+
+    <section class="hero">
+      <span class="hero-label">A LITTLE HELP, A BETTER READ.</span>
+      <h1>读懂每一个新词<span>。</span></h1>
+      <p>选中英文，即刻听见，也看懂。</p>
+      <div class="status-row"><span id="status" class="status"><i></i>正在加载…</span><label class="switch"><input id="enabled" type="checkbox" aria-label="启用划词翻译" disabled><span class="track"></span></label></div>
+    </section>
+
+    <form id="preferences">
+      <fieldset id="controls" disabled>
+        <div class="section-heading"><h2>阅读偏好</h2><span>自动保存</span></div>
+        <label class="setting-row"><span><strong>划词自动朗读</strong><small>选中英文后，立即播放发音</small></span><span class="switch"><input id="autoSpeak" type="checkbox"><span class="track"></span></span></label>
+        <label class="setting-row"><span><strong>在线补充翻译</strong><small>本地未收录时，使用在线翻译</small></span><span class="switch"><input id="onlineFallback" type="checkbox"><span class="track"></span></span></label>
+
+        <div class="section-heading second"><h2>听起来，刚刚好</h2></div>
+        <div class="accent-picker" role="group" aria-label="英语口音">
+          <label><input type="radio" name="accent" value="en-US" checked><span>美式英语 <small>US</small></span></label>
+          <label><input type="radio" name="accent" value="en-GB"><span>英式英语 <small>UK</small></span></label>
+        </div>
+        <label class="voice-label" for="voiceName">发音</label>
+        <select id="voiceName"><option value="">系统默认发音</option></select>
+        <div class="rate-label"><label for="rate">朗读速度</label><output id="rateValue" for="rate">0.9×</output></div>
+        <input id="rate" class="rate" type="range" min="0.5" max="1.5" step="0.1" value="0.9">
+        <div class="range-labels"><span>慢一点</span><span>快一点</span></div>
+        <button id="preview" class="preview" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z" stroke-linejoin="round"/><path d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14" stroke-linecap="round"/></svg>试听发音</button>
+      </fieldset>
+    </form>
+
+    <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+    <div class="tip"><span class="tip-icon">↖</span><p id="pageHint">双击英文即可查词，点击喇叭可再读一次。</p></div>
+    <footer><span>Chrome & Edge</span><button id="practice" type="button">去试一试 <span>↗</span></button></footer>
+  </main>
+</body>
+</html>
